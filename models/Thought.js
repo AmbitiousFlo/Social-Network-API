@@ -1,19 +1,19 @@
-const { Schema,} = require('mongoose');
+const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
-// Schema to create Post model
+// Schema to create Thought model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
-      required:true,
+      required: true,
       minLength: 1,
       maxLength: 280,
     },
     createdAt: {
       type: Date,
       default: Date.now,
-      get:(newDate)=>newDate.toLocaleDateString()
+      get: (newDate) => newDate.toLocaleDateString(),
     },
     username: {
       type: String,
@@ -29,15 +29,15 @@ const thoughtSchema = new Schema(
   }
 );
 
-// Create a virtual property `getTags` that gets the amount of tags associated with an application
-applicationSchema
+// Create a virtual property `reactionCount` that gets the amount of reactions associated with a thought
+thoughtSchema
   .virtual('reactionCount')
   // Getter
   .get(function () {
     return this.reactions.length;
   });
 
-// Initialize our Application model
-const Thought = model('thought', thoughtSchema);
+// Initialize our Thought model
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
