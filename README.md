@@ -36,7 +36,7 @@ This API provides a variety of endpoints for users, thoughts, reactions, and fri
 
 # Video Walkthrough
 
-[Video Demonstration](https://watch.screencastify.com/v/QqBSi3mVmY1sSHep5tbB)
+[Video Demonstration](https://drive.google.com/file/d/1EhL20MmOSiBqRNNyHlB8jiNDAtgYkLsg/view)
 
 
 ## License
